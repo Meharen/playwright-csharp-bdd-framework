@@ -1,17 +1,18 @@
 ﻿using Microsoft.Playwright;
+using Enterprise.Automation.Framework.Locators;
 using Enterprise.Automation.Framework.Utilities;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.MyInfo
+namespace Enterprise.Automation.Framework.Pages
 {
     public class MyInfoPage
     {
         private readonly TestContext _context;
-        private readonly MyInfoObjects _objects;
+        private readonly MyInfoLocators _objects;
 
         public MyInfoPage(TestContext context)
         {
             _context = context;
-            _objects = new MyInfoObjects(_context.Page!);
+            _objects = new MyInfoLocators(_context.Page!);
         }
 
 

@@ -1,12 +1,12 @@
 using Microsoft.Playwright;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.Time
+namespace Enterprise.Automation.Framework.Locators
 {
-    public class TimeObjects
+    public class TimeLocators
     {
         private readonly IPage _page;
 
-        public TimeObjects(IPage page)
+        public TimeLocators(IPage page)
         {
             _page = page;
         }

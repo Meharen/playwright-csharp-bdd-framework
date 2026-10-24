@@ -1,5 +1,5 @@
 ﻿using Enterprise.Automation.Framework.Drivers;
-using Enterprise.Automation.Framework.PagesAndObjects.Performance;
+using Enterprise.Automation.Framework.Pages;
 using Enterprise.Automation.Framework.Utilities;
 using Reqnroll;
 

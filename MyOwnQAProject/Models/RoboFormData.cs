@@ -1,6 +1,6 @@
 ﻿namespace Enterprise.Automation.Framework.Models
 {
-    public class FlipkartData
+    public class RoboFormData
     {
         public string Title { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;

@@ -11,24 +11,24 @@ using Reqnroll;
 namespace Enterprise.Automation.Framework.StepDefinitions
 {
     [Binding]
-    public class FlipkartSteps
+    public class RoboFormSteps
     {
         private readonly IPage _page;
         private readonly ScenarioContext _scenarioContext;
 
-        public FlipkartSteps(IPage page, ScenarioContext scenarioContext)
+        public RoboFormSteps(IPage page, ScenarioContext scenarioContext)
         {
             _page = page ?? throw new ArgumentNullException(nameof(page));
             _scenarioContext = scenarioContext ?? throw new ArgumentNullException(nameof(scenarioContext));
         }
 
-        [Given(@"user navigates to Flipkart website")]
-        public async Task GivenUserNavigatesToFlipkartWebsite()
+        [Given(@"user navigates to RoboForm website")]
+        public async Task GivenUserNavigatesToRoboFormWebsite()
         {
             var config = _scenarioContext.ContainsKey("Config") ? _scenarioContext["Config"] as IConfiguration : null;
 
             string url = config?["AppSettings:BaseUrl"]
-                      ?? config?["Urls:Flipkart"]
+                      ?? config?["Urls:RoboForm"]
                       ?? config?["BaseUrl"]
                       ?? "https://www.roboform.com/filling-test-all-fields";
 
@@ -36,8 +36,8 @@ namespace Enterprise.Automation.Framework.StepDefinitions
             await _page.GotoAsync(url);
         }
 
-        [Then(@"user fills flipkart form using excel data")]
-        public async Task ThenUserFillsFlipkartFormUsingExcelData()
+        [Then(@"user fills RoboForm form using Excel data")]
+        public async Task ThenUserFillsRoboFormFormUsingExcelData()
         {
             string excelPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestData", "TestData.xlsx");
 
@@ -49,15 +49,15 @@ namespace Enterprise.Automation.Framework.StepDefinitions
             Console.WriteLine($"Reading Excel data from: {excelPath}");
 
             var excelUtility = new ExcelUtility(excelPath);
-            // Read into the richer FlipkartData model so we can fill more fields
-            var formDataList = excelUtility.ReadAsList<Enterprise.Automation.Framework.Models.FlipkartData>("Sheet1");
+            // Read into the form model so the workbook supplies the form values.
+            var formDataList = excelUtility.ReadAsList<Enterprise.Automation.Framework.Models.RoboFormData>("Sheet1");
 
             var rowData = formDataList.FirstOrDefault();
 
             if (rowData != null)
             {
-                // Gather property values from FlipkartData in declared order
-                var props = typeof(Enterprise.Automation.Framework.Models.FlipkartData).GetProperties();
+                // Gather property values from RoboFormData in declared order
+                var props = typeof(Enterprise.Automation.Framework.Models.RoboFormData).GetProperties();
                 var propValues = props.Select(p => (p.GetValue(rowData) as string) ?? string.Empty).ToList();
 
                 // Query all form controls and attempt to fill them using property values in sequence

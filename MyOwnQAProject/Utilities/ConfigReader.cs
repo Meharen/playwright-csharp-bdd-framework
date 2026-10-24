@@ -9,7 +9,7 @@
 
     public class UrlSettings
     {
-        public string Flipkart { get; set; } = string.Empty;
+        public string RoboForm { get; set; } = string.Empty;
         public string TargetAppUrl { get; set; } = string.Empty;
         public string Automation {  get; set; } = string.Empty;
         public string PIM {  get; set; } = string.Empty;

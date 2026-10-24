@@ -1,17 +1,17 @@
 ﻿using System.Threading.Tasks;
-using Enterprise.Automation.Framework.Objects;
+using Enterprise.Automation.Framework.Locators;
 using TestContext = Enterprise.Automation.Framework.Utilities.TestContext;
 namespace Enterprise.Automation.Framework.Pages
 {
     public class AutomationPage
     {
         private readonly TestContext _context;
-        private readonly AutomationObjects _objects;
+        private readonly AutomationLocators _objects;
 
         public AutomationPage(TestContext context)
         {
             _context = context;
-            _objects = new AutomationObjects(_context.Page!);
+            _objects = new AutomationLocators(_context.Page!);
         }
 
         public async Task FillNameAsync(string name)

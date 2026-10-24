@@ -5,7 +5,7 @@ using Enterprise.Automation.Framework.Utilities;
 using Reqnroll;
 using System.Threading.Tasks;
 
-namespace AutomationFrameWork.StepDefinitions
+namespace Enterprise.Automation.Framework.StepDefinitions
 {
     [Binding]
     public class AutomationSteps

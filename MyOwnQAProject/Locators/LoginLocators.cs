@@ -1,12 +1,12 @@
 ﻿using Microsoft.Playwright;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.Login
+namespace Enterprise.Automation.Framework.Locators
 {
-    public class LoginObjects
+    public class LoginLocators
     {
         private readonly IPage _page;
 
-        public LoginObjects(IPage page)
+        public LoginLocators(IPage page)
         {
             _page = page;
         }

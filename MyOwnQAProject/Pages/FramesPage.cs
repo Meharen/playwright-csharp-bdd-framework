@@ -1,17 +1,18 @@
 ﻿using Microsoft.Playwright;
+using Enterprise.Automation.Framework.Locators;
 using Enterprise.Automation.Framework.Utilities;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.Frames
+namespace Enterprise.Automation.Framework.Pages
 {
     public class FramesPage
     {
         private readonly TestContext _context;
-        private readonly FramesObjects _objects;
+        private readonly FrameLocators _objects;
 
         public FramesPage(TestContext context)
         {
             _context = context;
-            _objects = new FramesObjects(_context.Page!);
+            _objects = new FrameLocators(_context.Page!);
         }
 
 

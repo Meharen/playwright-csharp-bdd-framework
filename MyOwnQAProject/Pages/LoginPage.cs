@@ -1,16 +1,17 @@
 ﻿using Microsoft.Playwright;
+using Enterprise.Automation.Framework.Locators;
 using TestContext = Enterprise.Automation.Framework.Utilities.TestContext;
-namespace Enterprise.Automation.Framework.PagesAndObjects.Login
+namespace Enterprise.Automation.Framework.Pages
 {
     public class LoginPage
     {
         private readonly TestContext _context;
-        private readonly LoginObjects _objects;
+        private readonly LoginLocators _objects;
 
         public LoginPage(TestContext context)
         {
             _context = context;
-            _objects = new LoginObjects(_context.Page!);
+            _objects = new LoginLocators(_context.Page!);
         }
 
         public async Task NavigateAsync(string url)

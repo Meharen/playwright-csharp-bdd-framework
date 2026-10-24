@@ -1,12 +1,12 @@
 ﻿using Microsoft.Playwright;
 
-namespace Enterprise.Automation.Framework.Objects
+namespace Enterprise.Automation.Framework.Locators
 {
-    public class FlipkartObjects
+    public class RoboFormLocators
     {
         private readonly IPage _page;
 
-        public FlipkartObjects(IPage page)
+        public RoboFormLocators(IPage page)
         {
             _page = page;
         }

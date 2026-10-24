@@ -1,17 +1,18 @@
 using Microsoft.Playwright;
+using Enterprise.Automation.Framework.Locators;
 using TestContext = Enterprise.Automation.Framework.Utilities.TestContext;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.Time
+namespace Enterprise.Automation.Framework.Pages
 {
     public class TimePage
     {
         private readonly TestContext _context;
-        private readonly TimeObjects _objects;
+        private readonly TimeLocators _objects;
 
         public TimePage(TestContext context)
         {
             _context = context;
-            _objects = new TimeObjects(_context.Page!);
+            _objects = new TimeLocators(_context.Page!);
         }
 
         public async Task ClickTimeLinkAsync()

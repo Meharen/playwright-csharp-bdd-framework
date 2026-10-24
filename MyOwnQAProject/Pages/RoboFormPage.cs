@@ -1,22 +1,22 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Enterprise.Automation.Framework.Models;
-using Enterprise.Automation.Framework.Objects;
+using Enterprise.Automation.Framework.Locators;
 
 namespace Enterprise.Automation.Framework.Pages
 {
-    public class FlipkartPage
+    public class RoboFormPage
     {
         private readonly IPage _page;
-        private readonly FlipkartObjects _objects;
+        private readonly RoboFormLocators _objects;
 
-        public FlipkartPage(IPage page)
+        public RoboFormPage(IPage page)
         {
             _page = page;
-            _objects = new FlipkartObjects(_page);
+            _objects = new RoboFormLocators(_page);
         }
 
-        public async Task FillFormAsync(FlipkartData data)
+        public async Task FillFormAsync(RoboFormData data)
         {
             await _objects.Title.FillAsync(data.Title);
             await _objects.FirstName.FillAsync(data.FirstName);

@@ -1,17 +1,18 @@
 ﻿using Microsoft.Playwright;
+using Enterprise.Automation.Framework.Locators;
 using Enterprise.Automation.Framework.Utilities;
 
-namespace Enterprise.Automation.Framework.PagesAndObjects.Performance
+namespace Enterprise.Automation.Framework.Pages
 {
     public class PerformancePage
     {
         private readonly TestContext _context;
-        private readonly PerformanceObjects _objects;
+        private readonly PerformanceLocators _objects;
 
         public PerformancePage(TestContext context)
         {
             _context = context;
-            _objects = new PerformanceObjects(_context.Page!);
+            _objects = new PerformanceLocators(_context.Page!);
         }
 
         public async Task SearchEmployeePerformanceAsync()

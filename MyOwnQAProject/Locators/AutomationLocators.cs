@@ -1,12 +1,12 @@
 ﻿using Microsoft.Playwright;
 
-namespace Enterprise.Automation.Framework.Objects
+namespace Enterprise.Automation.Framework.Locators
 {
-    public class AutomationObjects
+    public class AutomationLocators
     {
         private readonly IPage _page;
 
-        public AutomationObjects(IPage page)
+        public AutomationLocators(IPage page)
         {
             _page = page;
         }

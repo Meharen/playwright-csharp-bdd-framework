@@ -1,9 +1,9 @@
 ﻿using Enterprise.Automation.Framework.Drivers;
-using Enterprise.Automation.Framework.PagesAndObjects.Login;
+using Enterprise.Automation.Framework.Pages;
 using Enterprise.Automation.Framework.Utilities;
 using Reqnroll;
 
-namespace Enterprise.Automation.Framework.Steps
+namespace Enterprise.Automation.Framework.StepDefinitions
 {
     [Binding]
     public class LoginSteps
